@@ -60,10 +60,10 @@ Things you may want to cover:
 
 ## due_dates テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| Column          | Type | Options     |
+| --------------- | ---- | ----------- |
+| due_dates       | date | null: false |
+| completed_dates | date |             |
 
 ### Association
 
