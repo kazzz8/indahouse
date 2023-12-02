@@ -19,19 +19,19 @@
             <%#= link_to image_tag("logo.png", class: :logo), root_path %>
             InDaHouse
           </div>
-          <%# if user_signed_in? %>
+          <% if user_signed_in? %>
           <%# ログインしているとき %>
             <div class="nav__right">
-              <%#= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete },class: :nav__logout %>
+              <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete },class: :nav__logout %>
               <%#= link_to "New Proto", new_prototype_path, class: :nav__btn %>
             </div>
           <%# ログインしていないとき %>
-          <%# else %>
+          <% else %>
             <div class="nav__right">
-              <%#= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-              <%#= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
-          <%# end %>
+          <% end %>
         </div>
       </div>
     </header>
