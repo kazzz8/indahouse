@@ -6,25 +6,25 @@
 
   <div class="field">
     <%= f.label :due_date, "期限" %><br />
-    <%= f.date_field :due_date, class: :form__text, id:"task_due_date" %>
+    <%= f.date_field :due_date, class:"form__text", id:"task_due_date" %>
   </div>
 
   <div class="field">
     <%= f.label :category, "カテゴリー" %><br />
-    <%= f.text_field :category, class: :form__text, id:"task_category" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form__text", id:"task_category"}) %>
   </div>
 
   <div class="field">
     <%= f.label :url, "関連URL" %><br />
-    <%= f.text_field :url, class: :form__text, id:"task_url" %>
+    <%= f.text_field :url, class:"form__text", id:"task_url" %>
   </div>
 
   <div class="field">
     <%= f.label :note, "備考" %><br />
-    <%= f.text_area :note, class: :form__text, id:"task_note" %>
+    <%= f.text_area :note, class:"form__text", id:"task_note" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "登録する", class: :form__btn  %>
+    <%= f.submit "登録する", class:"form__btn"  %>
   </div>
 <% end %>
