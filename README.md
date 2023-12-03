@@ -49,7 +49,7 @@ Things you may want to cover:
 | category_id | integer    | null: false                    |
 | url         | string     |                                |
 | note        | string     |                                |
-| user_id     | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -60,12 +60,12 @@ Things you may want to cover:
 
 ## deadlines テーブル
 
-| Column    | Type | Options     |
-| --------- | ---- | ----------- |
-| deadline  | date | null: false |
-| completed | date |             |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| deadline  | date       | null: false                    |
+| completed | date       |                                |
+| task      | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :task
-
