@@ -43,29 +43,29 @@ Things you may want to cover:
 
 ## tasks テーブル
 
-| Column                | Type       | Options                        |
-| --------------------- | ---------- | ------------------------------ |
-| title                 | string     | null: false                    |
-| category_id           | integer    | null: false                    |
-| url                   | string     |                                |
-| note                  | string     |                                |
-| user                  | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| title       | string     | null: false                    |
+| category_id | integer    | null: false                    |
+| url         | string     |                                |
+| note        | string     |                                |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_many   :due_dates
+- has_many   :deadlines
 
 
 
-## due_dates テーブル
+## deadlines テーブル
 
-| Column          | Type | Options     |
-| --------------- | ---- | ----------- |
-| due_dates       | date | null: false |
-| completed_dates | date |             |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| deadline  | date       | null: false                    |
+| completed | date       |                                |
+| task      | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :task
-

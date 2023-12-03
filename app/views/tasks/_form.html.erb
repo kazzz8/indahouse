@@ -1,0 +1,31 @@
+<%= form_with model: @task_deadline, url: tasks_path, local: true do |f|%>
+  <%= render 'shared/error_messages', model: @task_deadline %>
+  <div class="field">
+    <%= f.label :title, "タスク名" %><br />
+    <%= f.text_field :title, id:"task_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deadline, "期限" %><br />
+    <%= f.date_field :deadline, class:"form__text", id:"task_deadline" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category, "カテゴリー" %><br />
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form__text", id:"task_category"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url, "関連URL" %><br />
+    <%= f.text_field :url, class:"form__text", id:"task_url" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :note, "備考" %><br />
+    <%= f.text_area :note, class:"form__text", id:"task_note" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録する", class:"form__btn"  %>
+  </div>
+<% end %>
