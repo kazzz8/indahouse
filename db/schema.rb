@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_03_052228) do
   create_table "tasks", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.integer "category_id", null: false
-    t.string "url"
+    t.text "url"
     t.string "note"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

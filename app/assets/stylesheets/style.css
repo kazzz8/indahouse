@@ -321,3 +321,16 @@ a {
     width: 100%;
   }
 }
+
+ /* エラーメッセージ */
+.error-alert {
+  display: flex;
+  margin-bottom: 5vh;
+  margin-left: 5vh;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}

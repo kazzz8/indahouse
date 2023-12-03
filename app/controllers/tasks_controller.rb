@@ -12,6 +12,7 @@ class TasksController < ApplicationController
       @task_deadline.save
       redirect_to root_path
     else
+      @task_deadline.deadline = nil
       render :new, status: :unprocessable_entity
     end
   end
