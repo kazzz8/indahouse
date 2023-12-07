@@ -8,5 +8,5 @@ class User < ApplicationRecord
 
   # Associasion
   has_many :tasks
-  
+
 end

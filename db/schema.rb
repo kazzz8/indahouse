@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_03_052228) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_07_020038) do
   create_table "deadlines", charset: "utf8", force: :cascade do |t|
-    t.date "deadline", null: false
+    t.date "due", null: false
     t.date "completed"
     t.bigint "task_id", null: false
     t.datetime "created_at", null: false
