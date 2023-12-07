@@ -11,12 +11,17 @@
     <%= Category.find(deadline.task.category_id).name %>
   </div>
 
-  <div class="card__completed">
-    <%= link_to "完了", "#" %>
+  <div class="card__url">
+    <%= link_to "URL", deadline.task.url, target: "_blank" %>
   </div>
 
-  <div class="card__procrastinate">
-    <%= link_to "後回し", "#" %>
-  </div>
+  <div class="card__button">
+      <button class="completed__button">
+        <%= link_to "✔", "#" %>
+      </button>
 
+      <button class="procrastinate__button">
+        <%= link_to "➔", "#" %>
+      </button>
+  </div>
 </div>
