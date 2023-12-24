@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card__date">
+    <%= deadline.due %>
+  </div>
+
+  <div class="card__title">
+    <%= link_to deadline.task.title, "#" %>
+  </div>
+
+  <div class="card__category">
+    <%= Category.find(deadline.task.category_id).name %>
+  </div>
+
+  <div class="card__url">
+    <%= link_to "URL", deadline.task.url, target: "_blank" %>
+  </div>
+
+  <div class="card__button">
+      <button class="completed__button">
+        <%= link_to "✔", new_deadline_path %>
+      </button>
+
+      <button class="procrastinate__button">
+        <%= link_to "➔", "#" %>
+      </button>
+  </div>
+</div>

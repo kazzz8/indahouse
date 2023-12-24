@@ -62,7 +62,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  
+
   gem 'rubocop', require: false
 end
 
@@ -75,3 +75,8 @@ end
 
 gem 'devise'
 gem 'active_hash'
+gem 'pry-rails'
+
+group :production do
+  gem 'pg'
+end

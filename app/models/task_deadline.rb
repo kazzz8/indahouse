@@ -1,11 +1,11 @@
 class TaskDeadline
   include ActiveModel::Model
-  attr_accessor :title, :category_id, :url, :note, :user_id, :deadline, :completed
+  attr_accessor :title, :category_id, :url, :note, :user_id, :due, :completed
 
   # バリデーション
-  validates :title, :category_id, :user_id, :deadline, presence: true
+  validates :title, :category_id, :user_id, :due, presence: true
   validates :url, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: "が正しいか確認してください" }
-  validates :category_id, numericality: { other_than: 1, message: "を選択してください" } 
+  validates :category_id, numericality: { other_than: 1, message: "を選択してください" }
   # ※deadlineの日付形式でないと受け付けないバリデーションは不要(入力フォームのdate_fieldで弾ける)
 
   def save
@@ -13,7 +13,7 @@ class TaskDeadline
     task = Task.create(title: title, category_id: category_id, url: url, note: note, user_id: user_id)
 
     # 期限を保存する
-    Deadline.create(deadline: deadline, completed: completed, task_id: task.id)
+    Deadline.create(due: due, completed: completed, task_id: task.id)
   end
 
 end

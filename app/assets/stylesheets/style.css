@@ -31,7 +31,8 @@ img {
 
 a {
   text-decoration: none;
-  color: #3b4043;
+  color: inherit;
+  /* color: #3b4043; */
 }
 
 /* ヘッダー */
@@ -50,6 +51,9 @@ a {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.nav__left {
+  font-size: 22px;
 }
 .logo {
   width: 200px;
@@ -92,11 +96,12 @@ a {
 }
 
 .field{
-  margin: 10px 0;
+  margin: 5px 20px;
+  font-size: large;
 }
 
 .actions{
-  margin-bottom: 40px;
+  margin: 20px 0px 40px 50px;
 }
 
 .form__btn{
@@ -127,28 +132,44 @@ a {
   text-decoration: underline;
 }
 .page-heading {
-  font-size: 30px;
+  font-size: 25px;
   margin-bottom: 28px;
 }
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  min-height: calc(100vh - 161px);
+  min-height: calc(100vh - 600px);
 }
 .card {
-  width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
+  /* width: calc((100% - 50px) / 6); */
+  width: 140px;
+  margin: 10px 15px 250px 15px;
+  border: 1px solid #999;
+  text-align: center;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .5);
+  border-radius: 5px;
 }
-.card__img {
-  margin-bottom: 16px;
+.card__date {
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 6px;
 }
 .card__title {
   display: block;
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 8px;
   font-weight: bold;
+}
+.card__category {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 8px;
+}
+.card__url {
+  font-size: 14px;
+  color: blue;
+  text-decoration: underline;
+  margin-bottom: 8px;
 }
 .card__summary {
   font-size: 16px;
@@ -160,6 +181,35 @@ a {
   text-align: right;
   text-decoration: underline;
 }
+
+.card__button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  color: white;
+  margin: 0px 2px 3px 0px;
+}
+.completed__button {
+  background-color: #005FFF;
+}
+
+.procrastinate__button {
+  background-color: #8EB8FF;
+}
+
+/* 完了&次回予定入力ページ */
+
+.date__field {
+  margin: 10px 20px 15px 20px;
+  width: 300px;
+}
+
+
 
 /* 詳細ページ */
 .prototype__wrapper{
@@ -276,6 +326,7 @@ a {
   text-align: center;
   color: #fff;
   font-size: 10px;
+  height: 20px;
 }
 
 /* タブレット対応 */

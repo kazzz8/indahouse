@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    @deadlines = Deadline.where(completed: nil)
   end
 
   def new
@@ -14,13 +15,13 @@ class TasksController < ApplicationController
       @task_deadline.save
       redirect_to root_path
     else
-      @task_deadline.deadline = nil
+      @task_deadline.due = nil
       render :new, status: :unprocessable_entity
     end
   end
 
   def task_params
-    params.require(:task_deadline).permit(:deadline, :completed, :title, :category_id, :url, :note).merge(user_id: current_user.id)
+    params.require(:task_deadline).permit(:due, :completed, :title, :category_id, :url, :note).merge(user_id: current_user.id)
   end
 
 end
