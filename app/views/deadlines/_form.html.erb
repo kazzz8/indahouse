@@ -1,0 +1,27 @@
+<%= form_with model: @task, url: deadlines_path, local: true do |f|%>
+  <%= render 'shared/error_messages', model: @task %>
+  <div class="field">
+    <%= @task.title %>
+  </div>
+
+  <div class="deadlines__block">
+    <h3>完了</h3>
+    <%= f.label :completed, "完了日　　", class:"date__field" %>
+    <%= f.date_field :completed, class:"date__field", id:"task_completed" %><br />
+    <%= f.label :completed, "数　量　　", class:"date__field" %>
+    <%= f.text_field :completed, class:"date__field", id:"task_completed" %>
+  </div>
+
+  <div class="deadlines__block">
+    <h3>次回予定</h3>
+    <%= f.label :due, "次回予定日", class:"date__field" %>
+    <%= f.date_field :due, class:"date__field", id:"task_due" %><br />
+    <%= f.label :url, "　関連URL", class:"date__field" %>
+    <%= f.text_field :url, class:"date__field", id:"task_url" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "登録する", class:"form__btn"  %>
+  </div>
+<% end %>

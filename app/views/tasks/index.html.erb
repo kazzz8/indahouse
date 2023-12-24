@@ -3,9 +3,8 @@
     <%# ログインしているときは以下を表示する %>
     <% if user_signed_in? %>
       <div class="greeting">
-        こんにちは、
         <%= current_user.nickname %>
-        さん
+        さんのタスク一覧
       </div>
     <% end %>
     <div class="card__wrapper">
