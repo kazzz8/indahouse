@@ -9,7 +9,6 @@
     <% end %>
     <div class="card__wrapper">
       <%= render partial: "task", collection: @deadlines, as: "deadline" %>
-      <%# 部分テンプレートへ複数のprototypeの入った@prototypesを送っている。送った@prototypesの中身はひとつひとつはprototypeという変数で扱うことができる。多分より簡素に書けるようにするRailsの機能なのかな %>
     </div>
   </div>
 </main>

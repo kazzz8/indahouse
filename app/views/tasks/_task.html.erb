@@ -17,9 +17,8 @@
 
   <div class="card__button">
       <button class="completed__button">
-        <%= link_to "✔", new_deadline_path %>
+        <%= link_to "✔", new_deadline_path(task_id: deadline.task.id) %>
       </button>
-
       <button class="procrastinate__button">
         <%= link_to "➔", "#" %>
       </button>
