@@ -76,6 +76,7 @@ end
 gem 'devise'
 gem 'active_hash'
 gem 'pry-rails'
+gem 'rails-i18n'
 
 group :production do
   gem 'pg'
