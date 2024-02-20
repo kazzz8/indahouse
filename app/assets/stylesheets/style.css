@@ -138,12 +138,11 @@ a {
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  min-height: calc(100vh - 600px);
 }
 .card {
   /* width: calc((100% - 50px) / 6); */
-  width: 140px;
-  margin: 10px 15px 250px 15px;
+  /* width: 140px; */
+  margin: 10px 15px 15px 15px;
   border: 1px solid #999;
   text-align: center;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .5);
@@ -155,9 +154,12 @@ a {
   margin-bottom: 6px;
 }
 .card__title {
-  display: block;
+  display: flex;
+  align-items: center; /* 要素内のアイテムを垂直方向に中央揃え */
+  justify-content: center;
+  height: 50px;
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   font-weight: bold;
 }
 .card__category {
@@ -328,6 +330,25 @@ button {
   font-size: 10px;
   height: 20px;
 }
+
+
+/* 外部モニター接続時 */
+@media (max-width: 1980px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 140px;
+  }
+  .prototype_image{
+    width: 60%;
+  }
+}
+
 
 /* タブレット対応 */
 @media (max-width: 1024px) {

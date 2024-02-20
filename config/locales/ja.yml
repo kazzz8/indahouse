@@ -1,0 +1,7 @@
+ja:
+  activemodel:
+    attributes:
+      task_deadline:
+        title: タスク名
+        due: 期限
+        category_id: カテゴリー

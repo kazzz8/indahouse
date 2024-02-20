@@ -3,10 +3,11 @@ class TaskDeadline
   attr_accessor :title, :category_id, :url, :note, :user_id, :due, :completed
 
   # バリデーション
-  validates :title, :category_id, :user_id, :due, presence: true
-  validates :url, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: "が正しいか確認してください" }
+  validates :title, :category_id, :user_id, :due, presence: { message: "を入力してください" }
+  validates :title, length: { maximum: 16, message: "は16文字以下で入力してください" }
+  validates :url, allow_blank: true, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: "が正しいか確認してください" }
   validates :category_id, numericality: { other_than: 1, message: "を選択してください" }
-  # ※deadlineの日付形式でないと受け付けないバリデーションは不要(入力フォームのdate_fieldで弾ける)
+  # ※deadlineの日付形式でないと受け付けないバリデーションは不要(入力フォームのdate_fieldで弾くことができる)
 
   def save
     # タスクを保存し、変数taskに代入
