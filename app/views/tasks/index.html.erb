@@ -6,9 +6,13 @@
         <%= current_user.nickname %>
         さんのタスク一覧
       </div>
+      <div class="card__wrapper">
+        <%= render partial: "task", collection: @deadlines, as: "deadline" %>
+      </div>
+    <% else %>
+      <div class="greeting">
+        ログインまたは新規登録してタスクを登録してください！
+      </div>
     <% end %>
-    <div class="card__wrapper">
-      <%= render partial: "task", collection: @deadlines, as: "deadline" %>
-    </div>
   </div>
 </main>
