@@ -2,7 +2,9 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @deadlines = Deadline.where(completed: nil)
+    if user_signed_in?
+      @deadlines = Deadline.joins(task: :user).where(users: { id: current_user.id }, completed: nil)
+    end
   end
 
   def new
