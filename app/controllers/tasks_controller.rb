@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   def index
     if user_signed_in?
-      @deadlines = Deadline.joins(task: :user).where(users: { id: current_user.id }, completed: nil)
+      @deadlines = Deadline.joins(task: :user).where(users: { id: current_user.id }, completed: nil).order(due: :asc)
     end
   end
 
